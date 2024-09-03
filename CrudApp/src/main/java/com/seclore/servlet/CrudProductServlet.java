@@ -26,7 +26,7 @@ public class CrudProductServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		ProductDAO dao = new ProductDAO();
-
+		System.out.println("IN DO GET");
 		if (action.equals("fetchAll")) {
 			List<Product> list = dao.fetchAll();
 			request.setAttribute("listOfProducts", list);
